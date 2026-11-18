@@ -1,0 +1,4 @@
+import React from 'react';
+import { Head, Link, useForm } from '@inertiajs/react';
+import ReportForm from './Form';
+export default function Edit({report,labels:l}) { const date=report.reported_at?new Date(report.reported_at):null;const localDate=date?new Date(date.getTime()-date.getTimezoneOffset()*60000).toISOString().slice(0,16):'';const form=useForm({report_number:report.report_number,title:report.title,report_type:report.report_type,location:report.location,risk_level:report.risk_level,status:report.status,reported_at:localDate,description:report.description,corrective_action:report.corrective_action||''}); return <><Head title={l.edit_report}/><ReportForm labels={l} form={form} title={l.edit_report} editing submitLabel={l.save_changes} submit={()=>form.put(`/hse-reports/${report.id}`)}><Link className="react-secondary" href={`/hse-reports/${report.id}`}>{l.back}</Link></ReportForm></>; }

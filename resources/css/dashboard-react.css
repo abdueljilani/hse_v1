@@ -1,0 +1,145 @@
+.react-dashboard { max-width:1600px; margin:0 auto; }
+.react-dashboard-intro { display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin:4px 0 25px; }
+.react-dashboard-intro h1 { margin:7px 0; color:#111; font-size:clamp(24px,3vw,32px); font-weight:800; line-height:1.2; }
+.react-dashboard-intro p { margin:0; color:#777268; font-size:14px; }
+.react-dashboard-date { padding:10px 13px; border:1px solid #e8e3d8; border-radius:8px; background:#fff; color:#625b4e; font-size:12px; white-space:nowrap; }
+.react-dashboard-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-bottom:22px; }
+.react-stat-card,.react-chart-card { min-width:0; padding:20px; border:1px solid #e9e5dc; border-radius:12px; background:#fff; box-shadow:0 3px 12px #00000008; }
+.react-stat-label { display:flex; align-items:center; gap:9px; color:#625b4e; font-size:13px; font-weight:650; }
+.react-stat-icon { display:grid; width:32px; height:32px; flex:none; place-items:center; border-radius:9px; background:color-mix(in srgb,var(--stat-accent) 12%,white); color:var(--stat-accent); font-size:16px; }
+.react-stat-value { margin:16px 0 8px; color:#111; font-size:34px; font-weight:800; line-height:1; }
+.react-stat-note { color:#8c867a; font-size:11px; }
+.react-dashboard-charts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; }
+.react-chart-heading { margin-bottom:14px; }
+.react-chart-heading h2 { margin:0; color:#111; font-size:15px; font-weight:750; }
+.react-chart-heading p { margin:5px 0 0; color:#777268; font-size:11px; }
+.react-chart-container { position:relative; height:290px; }
+.react-chart-container canvas { max-width:100%; }
+.react-chart-empty { display:grid; height:100%; place-items:center; color:#777268; font-size:12px; text-align:center; }
+.react-dashboard-success { margin-bottom:18px; padding:12px 15px; border:1px solid #f0d991; border-radius:9px; background:#fff5dc; color:#594300; }
+.react-page { max-width:1500px; margin:0 auto; color:#211f1b; }
+.react-page-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; margin:4px 0 22px; }
+.react-page h1 { margin:0; font-size:clamp(23px,3vw,31px); font-weight:800; }
+.react-page-heading p,.react-page>p,.react-panel p { color:#777268; margin:6px 0 0; }
+.react-primary,.react-secondary,.react-actions>a,.react-actions>button { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:40px; padding:9px 14px; border:0; border-radius:8px; text-decoration:none; font:700 13px Tajawal, sans-serif; cursor:pointer; }
+.react-primary { background:#171717; color:#fff; }.react-secondary { background:#fff5dc; color:#594300; }
+.react-message { padding:12px 15px; margin-bottom:16px; border:1px solid #f0d991; border-radius:9px; background:#fff5dc; color:#594300; }
+.react-table-wrap,.react-panel,.react-detail-card { overflow-x:auto; padding:20px; border:1px solid #e9e5dc; border-radius:13px; background:#fff; box-shadow:0 3px 12px #00000008; margin-bottom:16px; }
+.react-page table { width:100%; min-width:850px; border-collapse:collapse; }.react-page th,.react-page td { padding:13px 14px; border-bottom:1px solid #eeeae2; text-align:start; font-size:13px; }.react-page th { background:#faf9f6; color:#625b4e; white-space:nowrap; }.react-page tbody tr:hover { background:#fcfbf8; }
+.react-badge { display:inline-flex; padding:5px 9px; border-radius:20px; background:#fff5dc; color:#735400; white-space:nowrap; font-size:12px; }.react-badge.processed { background:#e8f1ff; color:#075bc4; }.react-badge.closed { background:#e8f5e9; color:#27632a; }
+.react-row-actions,.react-actions { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }.react-small-link,.react-small-danger { display:inline-flex; min-width:96px; height:34px; align-items:center; justify-content:center; padding:6px 9px; border:0; border-radius:7px; background:#fff5dc; color:#594300; font:700 12px Tajawal,sans-serif; text-decoration:none; white-space:nowrap; }.react-small-danger { background:#171717; color:#fff; cursor:pointer; }.react-empty { padding:30px!important; text-align:center!important; color:#777268; }
+.react-pagination { display:flex; justify-content:center; flex-wrap:wrap; gap:5px; margin:16px 0; }.react-pagination a { padding:7px 11px; border:1px solid #e9e5dc; border-radius:7px; color:#594300; text-decoration:none; }.react-pagination a.active { background:#171717; color:#fff; }
+.react-export { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin:16px 0; padding:17px 19px; border:1px solid #e9e5dc; border-radius:13px; background:linear-gradient(135deg,#fff,#fbfaf7); }.react-export strong,.react-export small { display:block; }.react-export small { margin-top:4px; color:#777268; }.react-export .react-actions a,.react-export .react-actions button { background:#fff5dc; color:#594300; border:1px solid #e6dfcf; }
+.react-form-page { max-width:950px; }.react-form-page>p { margin-bottom:22px; }.react-form-page form,.react-form-page>.card { padding:clamp(18px,3vw,30px); border:1px solid #e9e5dc; border-radius:13px; background:#fff; }.react-form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 20px; }.react-form-grid>div { min-width:0; }.react-form-grid .wide { grid-column:1/-1; }.react-form-grid label,.react-filter-grid label { display:grid; gap:7px; margin-bottom:7px; font-size:13px; font-weight:700; }.react-form-grid input,.react-form-grid select,.react-form-grid textarea,.react-filter-grid input,.react-filter-grid select { width:100%; min-height:42px; padding:9px 11px; border:1px solid #ddd8ce; border-radius:8px; background:#fff; font:14px Tajawal,sans-serif; }.react-form-grid textarea { min-height:115px; resize:vertical; }.react-form-page .react-actions { margin-top:20px; padding-top:17px; border-top:1px solid #eeeae2; }.react-error,.react-error-summary { color:#a83232; }.react-error-summary { margin-top:12px; }
+.react-stat-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:15px; margin-bottom:18px; }.react-stat-grid article { padding:19px; border:1px solid #e9e5dc; border-radius:13px; background:#fff; }.react-stat-grid span,.react-stat-grid strong { display:block; }.react-stat-grid span { color:#777268; }.react-stat-grid strong { margin-top:9px; font-size:29px; }.react-panel h2 { margin:0; font-size:18px; }.react-filter-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; align-items:end; margin-top:16px; }.react-filter-grid .react-actions { grid-column:1/-1; }.react-analytics-chart { position:relative; width:100%; height:320px; margin-top:18px; }.react-detail-card h1 { margin-bottom:20px; }.react-detail-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }.react-detail-grid article { min-width:0; padding:14px; border-radius:9px; background:#faf9f6; overflow-wrap:anywhere; }.react-detail-grid label { display:block; margin-bottom:7px; color:#777268; font-size:13px; }.react-detail-grid article div { white-space:pre-wrap; font-weight:650; }
+@media(max-width:900px) { .react-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .react-form-grid,.react-stat-grid { grid-template-columns:1fr; }.react-form-grid .wide { grid-column:auto; }.react-table-wrap,.react-panel,.react-detail-card { padding:14px; }.react-analytics-chart { height:260px; } }
+@media(max-width:1100px) { .react-dashboard-charts { grid-template-columns:repeat(2,minmax(0,1fr)); } .react-chart-card:last-child { grid-column:1/-1; } }
+@media(max-width:760px) { .react-dashboard-stats { grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; } .react-dashboard-charts { grid-template-columns:1fr; } .react-chart-card:last-child { grid-column:auto; } .react-chart-container { height:270px; } }
+@media(max-width:480px) { .react-dashboard-intro { align-items:flex-start; flex-direction:column; margin-bottom:19px; } .react-stat-card { padding:16px; } .react-stat-value { font-size:29px; } .react-stat-label { font-size:12px; } .react-chart-card { padding:16px; } }
+.react-profile-page { max-width:1000px; }.react-profile-page .react-panel h2 { margin:0 0 17px; }.react-profile-page .react-panel>p { margin:-9px 0 17px; }.react-profile-field { max-width:600px; margin-bottom:16px; }.react-profile-field label { display:block; margin-bottom:7px; font-size:13px; font-weight:700; }.react-profile-field input { width:100%; min-height:42px; padding:9px 11px; border:1px solid #ddd8ce; border-radius:8px; background:#fff; font:14px Tajawal,sans-serif; }
+.react-print-body { margin:0; background:#f4f2ed; color:#211f1b; font-family:Tajawal,'Segoe UI',sans-serif; }.react-print-page { min-height:100vh; padding:28px; }.react-print-toolbar { display:flex; max-width:1200px; justify-content:space-between; align-items:center; margin:0 auto 12px; color:#625b4e; }.react-print-toolbar button { padding:9px 14px; border:0; border-radius:8px; background:#171717; color:#fff; font:700 13px Tajawal,sans-serif; cursor:pointer; }.react-print-toolbar button:disabled { opacity:.55; cursor:wait; }.react-print-progress { max-width:1200px; margin:0 auto 12px; color:#625b4e; font-size:13px; }.react-print-sheet { max-width:1200px; margin:auto; padding:34px; border:1px solid #e8e3d8; border-radius:16px; background:#fff; box-shadow:0 12px 40px #17140d10; }.react-print-sheet>header { display:flex; justify-content:space-between; gap:20px; padding-bottom:22px; margin-bottom:22px; border-bottom:3px solid #ffb000; }.react-print-sheet>header span { color:#8b6700; font-size:11px; font-weight:800; letter-spacing:.12em; }.react-print-sheet h1 { margin:7px 0 4px; font-size:27px; }.react-print-sheet>header p,.react-print-sheet time { color:#777268; font-size:13px; }.react-print-count { display:inline-flex; padding:7px 11px; border-radius:999px; background:#fff5dc; color:#745400; font-size:12px; font-weight:700; }.react-print-sheet table { width:100%; border-collapse:collapse; }.react-print-sheet th,.react-print-sheet td { padding:11px 10px; border-bottom:1px solid #ece9e2; text-align:start; font-size:12px; vertical-align:top; }.react-print-sheet th { background:#f7f6f2; color:#625b4e; font-weight:800; white-space:nowrap; }.react-print-sheet tbody tr:nth-child(even) { background:#fcfbf8; }.react-print-details { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }.react-print-details section { padding:12px; border-radius:8px; background:#faf9f6; overflow-wrap:anywhere; }.react-print-details section strong { display:block; margin-bottom:5px; color:#625b4e; }.react-print-details section div { white-space:pre-wrap; }
+@media print { .react-print-body { background:#fff; }.react-print-page { min-height:0; padding:0; }.react-print-toolbar,.react-print-progress { display:none; }.react-print-sheet { max-width:none; padding:0; border:0; border-radius:0; box-shadow:none; }.react-print-sheet>header { break-inside:avoid; }.react-print-sheet thead { display:table-header-group; }.react-print-sheet tr { break-inside:avoid; } @page { size:landscape; margin:12mm; } }
+
+/* Consistent, modern controls across the React pages. */
+.react-primary,.react-secondary,.react-actions>a,.react-actions>button,.react-small-link,.react-small-danger,.react-export .react-actions a,.react-export .react-actions button,.react-print-toolbar button {
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+.react-primary,.react-actions>.react-primary {
+  border:1px solid #171717;
+  border-radius:9px;
+  background:linear-gradient(135deg,#1b1b1b,#090909);
+  box-shadow:0 3px 8px #17171718;
+}
+.react-primary:hover:not(:disabled),.react-actions>.react-primary:hover:not(:disabled) {
+  border-color:#e3a000;
+  background:linear-gradient(135deg,#ffbd26,#f2a900);
+  color:#171717;
+  box-shadow:0 5px 13px #e6a60035;
+  transform:translateY(-1px);
+}
+.react-secondary,.react-actions>.react-secondary {
+  border:1px solid #e7dfcd;
+  background:#fff;
+  color:#55420c;
+  box-shadow:0 2px 6px #17171708;
+}
+.react-secondary:hover:not(:disabled),.react-actions>.react-secondary:hover:not(:disabled) {
+  border-color:#e6b53e;
+  background:#fff8e8;
+  color:#3b2d00;
+  box-shadow:0 4px 11px #b3831717;
+  transform:translateY(-1px);
+}
+.react-small-link {
+  border:1px solid #ead9a8;
+  background:#fffaf0;
+  color:#725400;
+  box-shadow:0 2px 5px #17171708;
+}
+.react-small-link:hover {
+  border-color:#e5aa19;
+  background:#ffbd26;
+  color:#211900;
+  box-shadow:0 4px 10px #e6a60030;
+  transform:translateY(-1px);
+}
+.react-small-danger {
+  border:1px solid #f0d0d0;
+  background:#fff7f7;
+  color:#a83232;
+  box-shadow:0 2px 5px #17171708;
+}
+.react-small-danger:hover {
+  border-color:#a83232;
+  background:#a83232;
+  color:#fff;
+  box-shadow:0 4px 10px #a8323230;
+  transform:translateY(-1px);
+}
+.react-primary:active:not(:disabled),.react-secondary:active:not(:disabled),.react-small-link:active,.react-small-danger:active { transform:translateY(0); }
+.react-primary:disabled,.react-secondary:disabled,.react-small-danger:disabled { cursor:not-allowed; opacity:.58; box-shadow:none; }
+.react-primary:focus-visible,.react-secondary:focus-visible,.react-small-link:focus-visible,.react-small-danger:focus-visible,.react-report-filters input:focus-visible,.react-report-filters select:focus-visible,.react-form-grid input:focus-visible,.react-form-grid select:focus-visible,.react-form-grid textarea:focus-visible,.react-filter-grid input:focus-visible,.react-filter-grid select:focus-visible,.react-profile-field input:focus-visible {
+  outline:3px solid #ffbf3f70;
+  outline-offset:2px;
+}
+.react-report-filters {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  margin-bottom:16px;
+  padding:16px;
+  border:1px solid #e9e5dc;
+  border-radius:13px;
+  background:linear-gradient(135deg,#fff,#fcfbf8);
+  box-shadow:0 3px 12px #00000008;
+}
+.react-report-filters input,.react-report-filters select {
+  min-width:150px;
+  min-height:42px;
+  padding:9px 12px;
+  border:1px solid #e2ddd2;
+  border-radius:9px;
+  background:#fff;
+  color:#211f1b;
+  font:14px Tajawal,sans-serif;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+.react-report-filters input { flex:2 1 220px; }
+.react-report-filters input:hover,.react-report-filters select:hover,.react-form-grid input:hover,.react-form-grid select:hover,.react-form-grid textarea:hover,.react-filter-grid input:hover,.react-filter-grid select:hover,.react-profile-field input:hover { border-color:#cdb66e; }
+.react-report-filters input:focus,.react-report-filters select:focus,.react-form-grid input:focus,.react-form-grid select:focus,.react-form-grid textarea:focus,.react-filter-grid input:focus,.react-filter-grid select:focus,.react-profile-field input:focus { border-color:#d49b0b; box-shadow:0 0 0 3px #ffbf3f24; }
+.react-export .react-actions a,.react-export .react-actions button { border-radius:9px; box-shadow:0 2px 6px #17171708; }
+.react-export .react-actions a:hover,.react-export .react-actions button:hover { border-color:#e5aa19; background:#ffbd26; color:#211900; transform:translateY(-1px); }
+.react-row-actions { gap:7px; }
+.react-search-button { width:56px; min-width:56px; height:40px; min-height:40px; padding:0!important; }
+.react-search-button svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.react-pagination { direction:rtl; align-items:center; gap:7px; }
+.react-pagination .react-page-link { display:inline-grid; min-width:38px; height:38px; place-items:center; padding:0 10px; border:1px solid #e8e2d6; border-radius:9px; background:#fff; color:#594300; font:600 13px Tajawal,sans-serif; text-decoration:none; transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease; }
+.react-pagination .react-page-link:hover:not(.disabled):not(.active) { border-color:#e2ad25; background:#fff8e8; box-shadow:0 3px 9px #b3831718; transform:translateY(-1px); }
+.react-pagination .react-page-link.active { border-color:#171717; background:#171717; color:#fff; box-shadow:0 3px 8px #17171720; }
+.react-pagination .react-page-link.disabled { cursor:not-allowed; opacity:.42; }
+.react-pagination .react-page-link.react-page-previous,.react-pagination .react-page-link.react-page-next { width:40px; padding:0; }
+.react-pagination .react-page-link svg { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.react-pagination .react-page-link:focus-visible { outline:3px solid #ffbf3f70; outline-offset:2px; }
+@media(max-width:600px) { .react-report-filters { align-items:stretch; }.react-report-filters input,.react-report-filters select { width:100%; }.react-report-filters .react-search-button { width:56px; }.react-small-link,.react-small-danger { min-width:88px; } }

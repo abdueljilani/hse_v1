@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSE Control | نظام السلامة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span>HSE</span><div><b>HSE CONTROL</b><small>Safety Management</small></div></div>
+    <nav>
+      <button data-page="dashboard" class="nav active">▦ <span data-i18n="dashboard">لوحة التحكم</span></button>
+      <button data-page="report" class="nav">＋ <span data-i18n="newReport">تقرير جديد</span></button>
+      <button data-page="reports" class="nav">▤ <span data-i18n="reports">التقارير</span></button>
+      <button data-page="actions" class="nav">✓ <span data-i18n="actions">الإجراءات التصحيحية</span></button>
+    </nav>
+    <div class="sidebar-bottom">HSE CONTROL · v1.0<br><br>Safety First — السلامة أولاً</div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <button id="menuBtn" class="secondary mobile-menu">☰</button>
+      <div><small data-i18n="subtitle">نظام إدارة السلامة والصحة والبيئة</small><h1 id="pageTitle">لوحة التحكم</h1></div>
+      <div class="header-actions">
+        <button id="languageBtn" class="secondary">English</button>
+        <button class="primary" data-goto="report">＋ <span data-i18n="newReport">تقرير جديد</span></button>
+      </div>
+    </header>
+
+    <div class="content">
+      <section id="page-dashboard" class="page active">
+        <div class="intro"><div><small class="eyebrow">HSE MANAGEMENT</small><h2 data-i18n="welcome">السلامة تبدأ بالوعي</h2><p data-i18n="welcomeDesc">تابع الملاحظات والحوادث والإجراءات التصحيحية.</p></div><span id="today" class="date-chip"></span></div>
+
+        <div class="stats">
+          <article class="stat"><span data-i18n="total">إجمالي التقارير</span><strong id="total">0</strong><small data-i18n="allReports">جميع السجلات</small></article>
+          <article class="stat"><span data-i18n="open">التقارير المفتوحة</span><strong id="open">0</strong><small data-i18n="needFollow">تحتاج إلى متابعة</small></article>
+          <article class="stat"><span data-i18n="highRisk">مخاطر عالية وحرجة</span><strong id="risk">0</strong><small data-i18n="highRiskDesc">تقارير عالية الخطورة</small></article>
+          <article class="stat"><span data-i18n="closed">التقارير المغلقة</span><strong id="closed">0</strong><small data-i18n="completed">حالات مكتملة</small></article>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading"><div><h3 data-i18n="recent">أحدث التقارير</h3><p data-i18n="recentDesc">آخر الملاحظات الميدانية المسجلة</p></div><button class="link" data-goto="reports" data-i18n="viewAll">عرض الكل ←</button></div>
+          <div class="table-wrap"><table><thead><tr><th>ID</th><th data-i18n="title">عنوان التقرير</th><th data-i18n="site">الموقع</th><th data-i18n="severity">الخطورة</th><th data-i18n="status">الحالة</th></tr></thead><tbody id="recentTable"></tbody></table></div>
+          <div id="recentEmpty" class="empty"><span>▤</span><b data-i18n="empty">لا توجد تقارير حتى الآن</b><p data-i18n="createFirst">ابدأ بإنشاء تقرير جديد.</p><button class="primary" data-goto="report" data-i18n="newReport">تقرير جديد</button></div>
+        </div>
+
+        <div class="panel risk-panel"><div class="panel-heading"><div><h3 data-i18n="riskOverview">توزيع المخاطر</h3><p data-i18n="riskDesc">التقارير حسب مستوى الخطورة</p></div></div><div id="riskBars" class="risk-bars"></div></div>
+      </section>
+
+      <section id="page-report" class="page">
+        <div class="section-intro"><small class="eyebrow">FIELD SAFETY</small><h2 data-i18n="createTitle">إنشاء تقرير HSE جديد</h2><p data-i18n="formDesc">أدخل بيانات الحالة بدقة لضمان المتابعة.</p></div>
+        <form id="reportForm" class="panel form-panel">
+          <div class="form-heading"><span>01</span><div><h3 data-i18n="general">المعلومات العامة</h3><p data-i18n="generalDesc">بيانات الملاحظة والموقع</p></div></div>
+          <div class="form-grid">
+            <label><span data-i18n="type">نوع التقرير *</span><select name="type" required><option value="Near Miss">Near Miss — شبه حادث</option><option value="Unsafe Condition">Unsafe Condition — حالة غير آمنة</option><option value="Unsafe Act">Unsafe Act — تصرف غير آمن</option><option value="Incident">Incident — حادث</option><option value="Environmental">Environmental — بيئي</option><option value="Positive Observation">Positive Observation — ملاحظة إيجابية</option></select></label>
+            <label><span data-i18n="date">التاريخ والوقت *</span><input name="date" id="reportDate" type="datetime-local" required></label>
+            <label><span data-i18n="site">الموقع / المنشأة *</span><input name="site" required maxlength="120" placeholder="Oil Field A"></label>
+            <label><span data-i18n="department">القسم</span><select name="department"><option>Operations</option><option>Maintenance</option><option>Drilling</option><option>Logistics</option><option>HSE</option><option>Construction</option><option>Other</option></select></label>
+            <label><span data-i18n="reporter">اسم المبلّغ *</span><input name="reporter" required maxlength="100"></label>
+            <label><span data-i18n="location">الموقع الدقيق</span><input name="location" maxlength="160" placeholder="Workshop / Unit 3"></label>
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-heading"><span>02</span><div><h3 data-i18n="hazard">الخطر وتقييم الحالة</h3><p data-i18n="hazardDesc">وصف الملاحظة وتقييم شدتها</p></div></div>
+          <div class="form-grid">
+            <label class="full"><span data-i18n="title">عنوان التقرير *</span><input name="title" required maxlength="180" placeholder="Brief description of the observation"></label>
+            <label><span data-i18n="category">فئة الخطر</span><select name="category"><option>Working at Height</option><option>Electrical</option><option>Fire / Explosion</option><option>Mechanical</option><option>Chemical</option><option>Vehicle / Transport</option><option>Housekeeping</option><option>PPE</option><option>Environmental</option><option>Confined Space</option><option>Process Safety</option><option>Other</option></select></label>
+            <label><span data-i18n="severity">مستوى الخطورة *</span><select name="severity" required><option value="Low">Low — منخفض</option><option value="Medium" selected>Medium — متوسط</option><option value="High">High — عالٍ</option><option value="Critical">Critical — حرج</option></select></label>
+            <label class="full"><span data-i18n="description">وصف الحالة *</span><textarea name="description" required maxlength="5000" rows="4" placeholder="Describe what was observed..."></textarea></label>
+            <label class="full"><span data-i18n="immediate">الإجراء الفوري المتخذ</span><textarea name="immediateAction" maxlength="3000" rows="3"></textarea></label>
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-heading"><span>03</span><div><h3 data-i18n="followup">الإجراءات التصحيحية والمتابعة</h3><p data-i18n="followupDesc">تحديد المسؤول والموعد المستهدف</p></div></div>
+          <div class="form-grid">
+            <label class="full"><span data-i18n="corrective">الإجراء التصحيحي المقترح</span><textarea name="correctiveAction" maxlength="3000" rows="3"></textarea></label>
+            <label><span data-i18n="responsible">الشخص المسؤول</span><input name="responsible" maxlength="100"></label>
+            <label><span data-i18n="dueDate">تاريخ الاستحقاق</span><input name="dueDate" type="date"></label>
+          </div>
+
+          <div class="form-footer"><button type="reset" class="secondary" data-i18n="clear">مسح النموذج</button><button type="submit" class="primary" data-i18n="save">حفظ التقرير</button></div>
+        </form>
+      </section>
+
+      <section id="page-reports" class="page">
+        <div class="section-intro section-row"><div><small class="eyebrow">RECORDS & TRACKING</small><h2 data-i18n="allTitle">جميع التقارير</h2><p data-i18n="allDesc">ابحث وصنّف تقارير السلامة المسجلة.</p></div><button class="primary" id="exportBtn" data-i18n="export">تصدير CSV</button></div>
+        <div class="panel">
+          <div class="filters"><input id="search" type="search" placeholder="بحث بالرقم أو العنوان أو الموقع..."><select id="typeFilter"><option value="" data-i18n="allTypes">جميع الأنواع</option><option value="Near Miss">Near Miss</option><option value="Unsafe Condition">Unsafe Condition</option><option value="Unsafe Act">Unsafe Act</option><option value="Incident">Incident</option><option value="Environmental">Environmental</option><option value="Positive Observation">Positive Observation</option></select><select id="severityFilter"><option value="" data-i18n="allSeverities">جميع مستويات الخطورة</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select><select id="statusFilter"><option value="" data-i18n="allStatuses">جميع الحالات</option><option value="Open">Open</option><option value="In Progress">In Progress</option><option value="Closed">Closed</option></select></div>
+          <div class="table-wrap"><table class="wide-table"><thead><tr><th>ID</th><th data-i18n="date">التاريخ</th><th data-i18n="type">النوع</th><th data-i18n="title">العنوان</th><th data-i18n="site">الموقع</th><th data-i18n="severity">الخطورة</th><th data-i18n="status">الحالة</th><th data-i18n="manage">الإجراءات</th></tr></thead><tbody id="reportsTable"></tbody></table></div>
+          <div class="table-footer"><span id="count"></span><span data-i18n="localNote">البيانات محفوظة محليًا في المتصفح</span></div>
+          <div id="reportsEmpty" class="empty hidden"><b data-i18n="noResults">لا توجد نتائج مطابقة</b></div>
+        </div>
+      </section>
+
+      <section id="page-actions" class="page">
+        <div class="section-intro"><small class="eyebrow">FOLLOW-UP & ACCOUNTABILITY</small><h2 data-i18n="actionsTitle">الإجراءات التصحيحية</h2><p data-i18n="actionsDesc">متابعة المسؤولين والمواعيد وحالة المعالجة.</p></div>
+        <div class="stats action-stats"><article class="stat"><span data-i18n="pending">إجراءات معلقة</span><strong id="pendingActions">0</strong></article><article class="stat"><span data-i18n="overdue">إجراءات متأخرة</span><strong id="overdueActions">0</strong></article><article class="stat"><span data-i18n="completedActions">إجراءات مكتملة</span><strong id="completedActions">0</strong></article></div>
+        <div class="panel"><div class="panel-heading"><div><h3 data-i18n="actionRegister">سجل الإجراءات</h3><p data-i18n="actionRegisterDesc">الإجراءات المسجلة على التقارير</p></div></div><div class="table-wrap"><table class="wide-table"><thead><tr><th>ID</th><th data-i18n="corrective">الإجراء التصحيحي</th><th data-i18n="responsible">المسؤول</th><th data-i18n="dueDate">تاريخ الاستحقاق</th><th data-i18n="status">الحالة</th><th data-i18n="manage">الإجراءات</th></tr></thead><tbody id="actionsTable"></tbody></table></div><div id="actionsEmpty" class="empty hidden" data-i18n="noActions">لا توجد إجراءات مسجلة.</div></div>
+      </section>
+
+      <footer>HSE CONTROL © <span id="year"></span> — <span data-i18n="footer">السلامة مسؤولية الجميع</span></footer>
+    </div>
+  </main>
+
+  <dialog id="detailsDialog"><div class="dialog-head"><h2 id="detailsTitle">HSE Report</h2><button id="closeDialog" class="secondary">✕</button></div><div id="detailsBody"></div><div class="dialog-footer"><button id="printBtn" class="secondary" data-i18n="print">طباعة</button><button id="closeDialog2" class="primary" data-i18n="close">إغلاق</button></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
